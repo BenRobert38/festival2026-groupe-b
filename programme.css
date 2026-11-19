@@ -1,0 +1,124 @@
+/* =========================================================
+   MIOUUUSIC EJJN — Page « Programme »
+   ========================================================= */
+
+.entete-page { background: radial-gradient(ellipse at 70% 40%, rgba(232,255,58,.14), transparent 55%); }
+
+/* ---------- Barre d'outils : onglets + filtres ---------- */
+.barre-outils {
+  position: sticky; top: 76px; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+  padding: 1rem 0; background: var(--nuit);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.onglets { display: flex; gap: .7rem; }
+.onglet {
+  display: flex; flex-direction: column; align-items: center;
+  width: 82px; padding: .6rem 0; border-radius: 18px;
+  background: var(--nuit-2); color: var(--gris);
+  border: 2px solid var(--nuit-3); cursor: pointer;
+  font-family: var(--font-titre);
+  transition: transform .2s, background .2s, color .2s, border-color .2s;
+}
+.onglet:hover { transform: translateY(-3px); color: var(--blanc); }
+.onglet.actif { background: var(--jaune); color: var(--nuit); border-color: var(--jaune); transform: rotate(-3deg); box-shadow: 4px 4px 0 var(--rose); }
+.onglet-jour { font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; }
+.onglet-num { font-size: 1.8rem; font-weight: 900; line-height: 1; }
+
+.filtres { display: flex; gap: .5rem; flex-wrap: wrap; }
+.filtre {
+  --c: var(--blanc);
+  padding: .5rem 1rem; border-radius: 999px; cursor: pointer;
+  background: transparent; color: var(--c); border: 1.5px solid var(--c);
+  font-family: var(--font-texte); font-weight: 700; font-size: .85rem;
+  transition: background .2s, color .2s;
+}
+.f-ronron { --c: var(--rose); }
+.f-griffe { --c: var(--cyan); }
+.f-panier { --c: var(--jaune); }
+.filtre:hover, .filtre.actif { background: var(--c); color: var(--nuit); }
+
+/* ---------- Jours ---------- */
+.jour { display: none; padding-top: 2.5rem; }
+.jour.actif { display: block; animation: entre .45s ease; }
+@keyframes entre { from { opacity: 0; transform: translateY(20px); } }
+
+.jour-entete { margin-bottom: 2rem; }
+.jour-entete h2 { font-family: var(--font-titre); font-weight: 900; font-size: clamp(1.8rem, 4vw, 2.8rem); }
+.jour-entete p { color: var(--rose); font-family: var(--font-mono); }
+
+/* ---------- Créneaux ---------- */
+.creneaux { list-style: none; position: relative; }
+.creneaux::before {
+  content: ''; position: absolute; left: 92px; top: 0; bottom: 0; width: 2px;
+  background: linear-gradient(var(--rose), var(--cyan), var(--jaune));
+  opacity: .5;
+}
+.creneau {
+  display: grid; grid-template-columns: 80px 1fr auto; gap: 2.2rem; align-items: center;
+  padding: 1.3rem 1.4rem 1.3rem 0; position: relative;
+  border-radius: 18px;
+  transition: background .25s, transform .25s;
+}
+.creneau::before {
+  content: ''; position: absolute; left: 86px; top: 50%; translate: 0 -50%;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--nuit); border: 3px solid var(--gris);
+}
+.creneau:hover { background: var(--nuit-2); transform: translateX(6px); }
+.creneau.cache { display: none; }
+
+.heure { text-align: right; font-family: var(--font-mono); }
+.heure strong { display: block; font-size: 1.15rem; }
+.fin { font-size: .75rem; color: var(--gris); }
+
+.creneau-infos h3 { font-family: var(--font-titre); font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: .7rem; flex-wrap: wrap; }
+.creneau-infos p { color: var(--gris); font-size: .93rem; margin-top: .2rem; }
+
+/* Mise en avant des concerts des artistes */
+.vedette { background: linear-gradient(90deg, rgba(255,61,139,.12), transparent 70%); }
+.vedette::before { border-color: var(--rose); background: var(--rose); box-shadow: 0 0 0 6px rgba(255,61,139,.2); }
+.vedette .creneau-infos h3 { font-size: 1.5rem; font-weight: 900; }
+.vedette .heure strong { color: var(--rose); }
+.tag-artiste {
+  font-family: var(--font-mono); font-size: .65rem; font-weight: 700; text-transform: uppercase;
+  background: var(--rose); color: var(--nuit); padding: .2rem .5rem; border-radius: 6px;
+  transition: background .2s;
+}
+.tag-artiste:hover { background: var(--jaune); }
+
+.scene-tag {
+  font-family: var(--font-mono); font-size: .72rem; font-weight: 700; white-space: nowrap;
+  padding: .35rem .8rem; border-radius: 999px; color: var(--nuit);
+}
+.s-ronron  { background: var(--rose); }
+.s-griffe  { background: var(--cyan); }
+.s-panier  { background: var(--jaune); }
+.s-partout { background: var(--gris); }
+
+/* ---------- Légende ---------- */
+.legende { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.08); }
+.legende p { display: flex; align-items: center; gap: .6rem; font-size: .9rem; color: var(--gris); }
+.pt { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+.avertissement { margin-top: 1rem; font-family: var(--font-mono); font-size: .78rem; color: var(--gris); opacity: .8; }
+
+/* ---------- Encart ---------- */
+.encart {
+  margin-top: 4rem; padding: 2.5rem 3rem; border-radius: 28px;
+  background: var(--cyan); color: var(--nuit);
+  display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap;
+}
+.encart h2 { font-family: var(--font-titre); font-weight: 900; font-size: 1.8rem; }
+.encart .btn { background: var(--nuit); color: var(--blanc); border-color: var(--nuit); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 700px) {
+  .barre-outils { position: static; }
+  .creneaux::before { left: 8px; }
+  .creneau { grid-template-columns: 1fr; gap: .4rem; padding: 1rem 1rem 1rem 2.2rem; }
+  .creneau::before { left: 2px; top: 1.5rem; translate: 0; }
+  .heure { text-align: left; display: flex; gap: .6rem; align-items: baseline; }
+  .scene-tag { justify-self: start; }
+  .vedette .creneau-infos h3 { font-size: 1.25rem; }
+  .encart { padding: 2rem; }
+}
