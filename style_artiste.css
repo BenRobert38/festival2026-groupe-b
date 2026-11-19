@@ -1,0 +1,101 @@
+/* =========================================================
+   MIOUUUSIC EJJN — Page « Artistes »
+   ========================================================= */
+
+.entete-page { background: radial-gradient(ellipse at 15% 30%, rgba(58,224,255,.18), transparent 55%); }
+
+.pastilles { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 2rem; }
+.pastille {
+  padding: .55rem 1.1rem; border-radius: 999px;
+  font-family: var(--font-titre); font-weight: 600; font-size: .82rem;
+  border: 2px solid var(--c); color: var(--c);
+  transition: background .2s, color .2s;
+}
+.pastille:hover { background: var(--c); color: var(--nuit); }
+
+/* Couleur propre à chaque artiste */
+.a-rose   { --c: var(--rose); }
+.a-jaune  { --c: var(--jaune); }
+.a-cyan   { --c: var(--cyan); }
+.a-violet { --c: #9b6bff; }
+
+/* ---------- Bloc artiste ---------- */
+.artiste { padding: 5rem 0; position: relative; scroll-margin-top: 80px; }
+.artiste:nth-of-type(even) { background: var(--nuit-2); }
+.artiste-grille { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: center; }
+.inverse .artiste-visuel { order: 2; }
+
+.artiste-visuel { position: relative; }
+.artiste-avatar {
+  width: 100%; max-width: 420px; margin: 0 auto; aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px var(--nuit), 0 0 0 14px var(--c), 0 40px 80px rgba(0,0,0,.45);
+  transition: transform .5s;
+  animation: respire 5s ease-in-out infinite;
+}
+.artiste-avatar svg { width: 100%; height: 100%; }
+.artiste-visuel:hover .artiste-avatar { transform: rotate(-8deg) scale(1.04); }
+@keyframes respire { 50% { transform: translateY(-12px); } }
+.artiste-numero {
+  position: absolute; bottom: -1rem; left: 0;
+  font-family: var(--font-titre); font-weight: 900; font-size: 7rem; line-height: 1;
+  -webkit-text-stroke: 2px var(--c); color: transparent;
+}
+.inverse .artiste-numero { left: auto; right: 0; }
+
+.artiste-genre { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .15em; font-size: .8rem; color: var(--c); }
+.artiste-infos h2 {
+  font-family: var(--font-titre); font-weight: 900; font-size: clamp(2.6rem, 6vw, 4.5rem);
+  line-height: .95; letter-spacing: -.03em; margin: .4rem 0 .4rem;
+}
+.artiste-vrai { color: var(--gris); font-family: var(--font-mono); font-size: .9rem; }
+.artiste-vrai strong { color: var(--nuit); background: var(--c); padding: .05rem .5rem; border-radius: 5px; }
+.artiste-bio { margin: 1.4rem 0; font-size: 1.06rem; color: var(--gris); }
+.artiste-bio strong { color: var(--blanc); }
+
+blockquote {
+  font-family: var(--font-titre); font-weight: 600; font-size: 1.15rem; line-height: 1.4;
+  padding: 1.2rem 1.4rem; border-left: 5px solid var(--c);
+  background: rgba(255,255,255,.04); border-radius: 0 14px 14px 0;
+}
+
+.artiste-colonnes { display: grid; grid-template-columns: 1fr 1.3fr; gap: 2rem; margin-top: 2rem; }
+.artiste-colonnes h3 { font-family: var(--font-mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .15em; color: var(--c); margin-bottom: .8rem; }
+.titres { list-style: none; }
+.titres li { display: flex; gap: .8rem; padding: .5rem 0; border-bottom: 1px dashed rgba(255,255,255,.12); font-weight: 500; }
+.titres span { font-family: var(--font-mono); color: var(--c); }
+.dates li { padding: .5rem 0; border-bottom: 1px dashed rgba(255,255,255,.12); font-size: .92rem; color: var(--gris); }
+.dates strong { display: block; color: var(--blanc); font-family: var(--font-titre); font-size: .85rem; }
+
+.fun { margin-top: 1.8rem; font-size: .93rem; color: var(--gris); }
+.fun span {
+  display: inline-block; margin-right: .4rem; padding: .15rem .6rem; border-radius: 6px;
+  background: var(--c); color: var(--nuit); font-weight: 700; font-size: .8rem; transform: rotate(-3deg);
+}
+
+/* ---------- Final ---------- */
+.final {
+  margin-top: 4rem; text-align: center; padding: 4rem 2rem; border-radius: 32px;
+  background:
+    linear-gradient(var(--nuit), var(--nuit)) padding-box,
+    linear-gradient(120deg, var(--rose), var(--jaune), var(--cyan), #9b6bff) border-box;
+  border: 4px solid transparent;
+}
+.final h2 { font-family: var(--font-titre); font-weight: 900; font-size: clamp(2.4rem, 7vw, 5rem); margin: .8rem 0 1rem; }
+.final h2 em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--rose), var(--jaune), var(--cyan));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.final p { max-width: 600px; margin: 0 auto 2rem; color: var(--gris); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .artiste-grille { grid-template-columns: 1fr; gap: 3rem; }
+  .inverse .artiste-visuel { order: 0; }
+  .artiste-avatar { max-width: 300px; }
+  .artiste-numero { font-size: 5rem; }
+}
+@media (max-width: 560px) {
+  .artiste-colonnes { grid-template-columns: 1fr; }
+}
