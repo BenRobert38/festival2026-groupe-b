@@ -99,3 +99,16 @@ blockquote {
 @media (max-width: 560px) {
   .artiste-colonnes { grid-template-columns: 1fr; }
 }
+
+/* ---------- Contacts des artistes ---------- */
+.contact-artiste {
+  margin-top: 1.8rem; padding: 1.4rem 1.6rem; border-radius: 18px;
+  border: 2px solid var(--c); background: rgba(255,255,255,.03);
+}
+.contact-artiste h3 {
+  font-family: var(--font-mono); font-size: .75rem; text-transform: uppercase;
+  letter-spacing: .15em; color: var(--c); margin-bottom: .8rem;
+}
+.contact-artiste li { display: flex; align-items: center; gap: .7rem; padding: .3rem 0; font-size: .95rem; }
+.contact-artiste a { font-weight: 700; border-bottom: 2px solid transparent; transition: border-color .2s, color .2s; word-break: break-all; }
+.contact-artiste a:hover { color: var(--c); border-color: var(--c); }

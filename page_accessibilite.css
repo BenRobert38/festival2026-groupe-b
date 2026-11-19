@@ -1,0 +1,80 @@
+/* =========================================================
+   MIOUUUSIC EJJN — Page « Accessibilité »
+   ========================================================= */
+
+.entete-page { background: radial-gradient(ellipse at 80% 30%, rgba(139,227,107,.2), transparent 55%); }
+.bloc { padding: 4rem 0; }
+
+/* ---------- Réglages du site ---------- */
+.reglages {
+  display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap;
+  padding: 2rem 2.4rem; border-radius: 28px;
+  background: var(--nuit-2); border: 2px solid #8be36b;
+}
+.reglages h2 { font-family: var(--font-titre); font-size: 1.3rem; }
+.reglages p { color: var(--gris); font-size: .93rem; }
+.interrupteurs { display: flex; gap: .8rem; flex-wrap: wrap; }
+.interrupteur {
+  display: flex; align-items: center; gap: .7rem;
+  padding: .7rem 1.1rem; border-radius: 999px; cursor: pointer;
+  background: var(--nuit); color: var(--blanc); border: 2px solid var(--nuit-3);
+  font: inherit; font-weight: 700; font-size: .9rem;
+}
+.interrupteur:focus-visible { outline: 3px solid var(--jaune); outline-offset: 3px; }
+.piste { width: 40px; height: 22px; border-radius: 999px; background: var(--nuit-3); position: relative; transition: background .2s; }
+.piste::after { content: ''; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--gris); transition: transform .2s, background .2s; }
+.interrupteur[aria-pressed="true"] { border-color: #8be36b; }
+.interrupteur[aria-pressed="true"] .piste { background: #8be36b; }
+.interrupteur[aria-pressed="true"] .piste::after { transform: translateX(18px); background: var(--nuit); }
+
+/* ---------- Dispositifs ---------- */
+.dispositifs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+.dispositif {
+  padding: 2rem; border-radius: var(--rayon);
+  border: 2px solid var(--nuit-3); background: var(--nuit-2);
+  transition: border-color .3s, transform .3s;
+}
+.dispositif:hover { border-color: #8be36b; transform: translateY(-5px); }
+.d-icone {
+  width: 60px; height: 60px; border-radius: 18px; display: grid; place-items: center;
+  font-size: 1.9rem; background: #8be36b; margin-bottom: 1rem;
+}
+.dispositif h3 { font-family: var(--font-titre); font-size: 1.2rem; margin-bottom: .8rem; }
+.dispositif li { padding: .45rem 0 .45rem 1.6rem; position: relative; color: var(--gris); }
+.dispositif li::before { content: '✓'; position: absolute; left: 0; color: #8be36b; font-weight: 900; }
+
+/* ---------- Accompagnateur ---------- */
+.accompagnateur {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 2rem; align-items: center;
+  padding: 2.4rem; border-radius: 28px; background: #8be36b; color: var(--nuit);
+}
+.acc-badge {
+  font-family: var(--font-titre); font-weight: 900; font-size: 1.1rem;
+  background: var(--nuit); color: #8be36b; padding: 1.2rem 1rem; border-radius: 50%;
+  aspect-ratio: 1; display: grid; place-items: center; transform: rotate(-10deg);
+}
+.accompagnateur h2 { font-family: var(--font-titre); font-weight: 900; font-size: 1.5rem; }
+.accompagnateur p { font-weight: 500; margin-top: .4rem; }
+.accompagnateur .btn { background: var(--nuit); color: var(--blanc); border-color: var(--nuit); }
+
+/* ---------- Engagements site web ---------- */
+.site-web p { color: var(--gris); }
+.engagements { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+.engagements li {
+  padding: 1.2rem 1.4rem 1.2rem 3rem; border-radius: 16px; position: relative;
+  border: 1px solid var(--nuit-3); font-weight: 500;
+}
+.engagements li::before { content: '♿'; position: absolute; left: 1.1rem; top: 1.15rem; }
+
+/* ---------- Référente ---------- */
+.referent { padding: 2.5rem; border-radius: 28px; border: 2px dashed var(--gris); text-align: center; }
+.referent h2 { font-family: var(--font-titre); font-weight: 900; font-size: 1.6rem; }
+.referent p { color: var(--gris); max-width: 640px; margin: .8rem auto 0; }
+.ref-contact { color: var(--blanc) !important; font-family: var(--font-mono); }
+
+@media (max-width: 900px) {
+  .dispositifs { grid-template-columns: 1fr; }
+  .accompagnateur { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+  .engagements { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) { .engagements { grid-template-columns: 1fr; } }
