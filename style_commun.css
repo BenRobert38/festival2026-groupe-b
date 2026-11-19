@@ -203,6 +203,16 @@ ul { list-style: none; }
   .footer-grille { grid-template-columns: 1fr; }
 }
 
+/* ---------- Réglages d'accessibilité (activés depuis la page Accessibilité) ---------- */
+html.texte-grand { font-size: 118%; }
+html.contraste {
+  --nuit: #000; --nuit-2: #0d0d0d; --nuit-3: #fff;
+  --gris: #fff; --rose: #ff6aa8; --cyan: #7af0ff;
+}
+html.contraste a:not(.btn) { text-decoration: underline; }
+html.sans-anim *, html.sans-anim *::before, html.sans-anim *::after { animation: none !important; transition: none !important; }
+html.sans-anim .apparait { opacity: 1; transform: none; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .apparait { opacity: 1; transform: none; }
