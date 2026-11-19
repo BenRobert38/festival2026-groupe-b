@@ -1,0 +1,93 @@
+/* =========================================================
+   MIOUUUSIC EJJN — Page « Restaurant » (La Gamelle)
+   ========================================================= */
+
+.entete-page { background: radial-gradient(ellipse at 80% 30%, rgba(255,138,61,.25), transparent 55%); }
+
+.infos-rapides { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 2rem; }
+.infos-rapides span {
+  padding: .55rem 1rem; border-radius: 999px; font-size: .9rem; font-weight: 500;
+  background: var(--nuit-2); border: 1px solid var(--nuit-3);
+}
+
+/* ---------- Carte ---------- */
+.carte-menu { padding: 3rem 0; }
+.menu-entete { display: flex; justify-content: space-between; align-items: flex-end; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+
+.filtres-regime { display: flex; gap: .5rem; }
+.filtre-regime {
+  padding: .55rem 1.1rem; border-radius: 999px; cursor: pointer;
+  background: transparent; color: var(--blanc); border: 1.5px solid var(--gris);
+  font-family: var(--font-texte); font-weight: 700; font-size: .88rem;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.filtre-regime:hover, .filtre-regime.actif { background: #8be36b; border-color: #8be36b; color: var(--nuit); }
+
+.stands { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.4rem; }
+
+.stand {
+  --c: var(--rose);
+  border-radius: var(--rayon); overflow: hidden;
+  background: var(--nuit-2); border: 2px solid var(--nuit-3);
+  transition: transform .3s, border-color .3s, box-shadow .3s;
+}
+.st-jaune  { --c: var(--jaune); }
+.st-cyan   { --c: var(--cyan); }
+.st-violet { --c: #9b6bff; }
+.st-orange { --c: var(--orange); }
+.stand:hover { transform: translateY(-6px); border-color: var(--c); box-shadow: 8px 8px 0 var(--c); }
+
+.stand-entete { display: flex; gap: 1rem; align-items: center; padding: 1.4rem 1.5rem; background: var(--c); color: var(--nuit); }
+.stand-icone {
+  width: 58px; height: 58px; flex-shrink: 0; border-radius: 16px;
+  display: grid; place-items: center; font-size: 2rem;
+  background: var(--nuit); transform: rotate(-6deg);
+}
+.stand-entete h3 { font-family: var(--font-titre); font-weight: 900; font-size: 1.2rem; line-height: 1.1; }
+.stand-entete p { font-size: .88rem; font-weight: 500; }
+
+.plats { padding: .5rem 1.5rem 1rem; }
+.plat {
+  display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start;
+  padding: 1rem 0; border-bottom: 1px dashed rgba(255,255,255,.12);
+  transition: opacity .3s;
+}
+.plat:last-child { border-bottom: 0; }
+.plat.estompe { opacity: .2; }
+.plat h4 { font-family: var(--font-titre); font-size: .95rem; font-weight: 600; }
+.plat p { color: var(--gris); font-size: .88rem; margin-top: .2rem; }
+.pastille-regime {
+  display: inline-block; margin-left: .3rem; padding: .1rem .45rem; border-radius: 6px;
+  background: rgba(139,227,107,.18); color: #8be36b;
+  font-family: var(--font-mono); font-size: .65rem; font-weight: 700; vertical-align: middle;
+}
+.prix { font-family: var(--font-mono); font-weight: 700; color: var(--c); white-space: nowrap; font-size: 1.05rem; }
+
+/* ---------- Plats préférés des artistes ---------- */
+.preferes { padding: 3rem 0; }
+.preferes-grille { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+.prefere {
+  padding: 1.6rem; border-radius: var(--rayon);
+  background: var(--blanc); color: var(--nuit);
+  transform: rotate(-1.5deg); transition: transform .3s;
+}
+.prefere:nth-child(even) { transform: rotate(1.5deg); }
+.prefere:hover { transform: rotate(0) scale(1.04); }
+.qui { font-family: var(--font-mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--rose); font-weight: 700; }
+.quoi { font-family: var(--font-titre); font-weight: 800; font-size: 1.05rem; margin: .4rem 0 .6rem; line-height: 1.2; }
+.pourquoi { font-style: italic; font-size: .92rem; }
+
+/* ---------- Allergènes ---------- */
+.allergenes {
+  margin-top: 2rem; padding: 2.5rem; border-radius: 28px;
+  border: 2px dashed var(--orange);
+}
+.allergenes h2 { font-family: var(--font-titre); font-weight: 900; font-size: 1.6rem; color: var(--orange); }
+.allergenes p { color: var(--gris); margin: .8rem 0 1.5rem; max-width: 760px; }
+
+@media (max-width: 1000px) { .preferes-grille { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) {
+  .stands { grid-template-columns: 1fr; }
+  .preferes-grille { grid-template-columns: 1fr; }
+  .allergenes { padding: 1.8rem; }
+}

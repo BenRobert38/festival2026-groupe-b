@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant — Miouuusic EJJN</title>
+  <meta name="description" content="La Gamelle, l'espace restauration du festival Miouuusic EJJN : stands, carte et plats végé.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>">
+  <link rel="stylesheet" href="commun.css">
+  <link rel="stylesheet" href="restaurant.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="conteneur">
+      <a href="index.html" class="logo" aria-label="Miouuusic EJJN — accueil"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 4 L23 19 Q32 16 41 19 L56 4 L57 34 Q57 59 32 59 Q7 59 7 34 Z" fill="#ff3d8b"/><path d="M13 13 L20 20 L13 24Z M51 13 L44 20 L51 24Z" fill="#120a24" opacity=".35"/><ellipse cx="22.5" cy="36" rx="4.2" ry="5" fill="#120a24"/><ellipse cx="41.5" cy="36" rx="4.2" ry="5" fill="#120a24"/><circle cx="24" cy="34.5" r="1.4" fill="#fff8f0"/><circle cx="43" cy="34.5" r="1.4" fill="#fff8f0"/><path d="M29 44 h6 l-3 3.5z" fill="#e8ff3a"/><path d="M3 41 h12 M3 46 h12 M49 41 h12 M49 46 h12" stroke="#120a24" stroke-width="1.6" stroke-linecap="round"/></svg>Miouuusic<span class="tag">EJJN</span></a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-principale">
+        <a href="index.html">Accueil</a>
+        <a href="festival.html">Le festival</a>
+        <a href="artistes.html">Artistes</a>
+        <a href="programme.html">Programme</a>
+        <a href="infos.html">Infos pratiques</a>
+        <a href="infos.html#billetterie" class="btn btn-petit">Billets 🎟</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="entete-page">
+      <div class="conteneur">
+        <span class="surtitre">Restaurant du festival</span>
+        <h1>La <span class="contour">Gamelle</span></h1>
+        <p class="intro">Cinq stands, des produits locaux, des options végé partout&nbsp;: au Miouuusic, on ne mange pas des croquettes (enfin, presque).</p>
+        <div class="infos-rapides">
+          <span>🕛 Ouvert de 12h à 2h</span><span>💳 Paiement cashless</span><span>🌱 50&nbsp;% de plats végé</span><span>♻️ Vaisselle consignée</span>
+        </div>
+      </div>
+      <svg class="patte" viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="68" rx="24" ry="20"/><ellipse cx="20" cy="42" rx="9" ry="12"/><ellipse cx="39" cy="24" rx="9" ry="12"/><ellipse cx="61" cy="24" rx="9" ry="12"/><ellipse cx="80" cy="42" rx="9" ry="12"/></svg>
+    </section>
+
+    <section class="conteneur carte-menu">
+      <div class="menu-entete">
+        <div>
+          <span class="surtitre">La carte</span>
+          <h2 class="titre-section">Au <em>menu</em> ce soir.</h2>
+        </div>
+        <div class="filtres-regime" aria-label="Filtrer les plats">
+          <button class="filtre-regime actif" data-regime="tout">Tout</button>
+          <button class="filtre-regime" data-regime="vege">🌱 Végé</button>
+          <button class="filtre-regime" data-regime="vegan">🌿 Vegan</button>
+        </div>
+      </div>
+      <div class="stands">
+        <article class="stand st-rose apparait">
+          <div class="stand-entete"><span class="stand-icone">🍣</span><div><h3>Le Thon qui Ronronne</h3><p>Poke bowls & cuisine japonaise</p></div></div>
+          <ul class="plats"><li class="plat" data-regime="tout"><div><h4>Bowl « Matou Pêcheur »</h4><p>Thon mariné, riz vinaigré, avocat, mangue, sésame</p></div><span class="prix">11 €</span></li><li class="plat" data-regime="vege"><div><h4>Bowl « Chat Zen » <span class="pastille-regime">🌱 Végé</span></h4><p>Tofu grillé, edamame, chou rouge, sauce cacahuète</p></div><span class="prix">10 €</span></li><li class="plat" data-regime="tout"><div><h4>Gyozas x6</h4><p>Poulet-citronnelle ou légumes</p></div><span class="prix">6 €</span></li></ul>
+        </article>
+        <article class="stand st-jaune apparait">
+          <div class="stand-entete"><span class="stand-icone">🍔</span><div><h3>Croquettes Bistro</h3><p>Burgers & frites maison</p></div></div>
+          <ul class="plats"><li class="plat" data-regime="tout"><div><h4>Le Gros Matou</h4><p>Bœuf local, cheddar affiné, oignons confits</p></div><span class="prix">12 €</span></li><li class="plat" data-regime="vege"><div><h4>Le Chaton Vert <span class="pastille-regime">🌱 Végé</span></h4><p>Galette pois chiches-betterave, sauce yaourt</p></div><span class="prix">11 €</span></li><li class="plat" data-regime="vege"><div><h4>Frites « Griffées » <span class="pastille-regime">🌱 Végé</span></h4><p>Frites maison, sel fumé, mayo au curry</p></div><span class="prix">4 €</span></li></ul>
+        </article>
+        <article class="stand st-cyan apparait">
+          <div class="stand-entete"><span class="stand-icone">🍝</span><div><h3>Pattes Fraîches</h3><p>Pâtes fraîches à l'italienne</p></div></div>
+          <ul class="plats"><li class="plat" data-regime="tout"><div><h4>Pattes Carbonara</h4><p>La vraie, sans crème, avec guanciale</p></div><span class="prix">10 €</span></li><li class="plat" data-regime="vege"><div><h4>Pattes Pesto <span class="pastille-regime">🌱 Végé</span></h4><p>Basilic, pignons, parmesan</p></div><span class="prix">9 €</span></li><li class="plat" data-regime="vegan"><div><h4>Pattes Arrabbiata <span class="pastille-regime">🌿 Vegan</span></h4><p>Tomate, piment, ail — ça griffe !</p></div><span class="prix">9 €</span></li></ul>
+        </article>
+        <article class="stand st-violet apparait">
+          <div class="stand-entete"><span class="stand-icone">🥞</span><div><h3>Crêpes de Minuit</h3><p>Crêpes & galettes jusqu'à 2h</p></div></div>
+          <ul class="plats"><li class="plat" data-regime="tout"><div><h4>Galette « Complète »</h4><p>Jambon, emmental, œuf</p></div><span class="prix">8 €</span></li><li class="plat" data-regime="vege"><div><h4>Crêpe « Ronron » <span class="pastille-regime">🌱 Végé</span></h4><p>Caramel beurre salé maison</p></div><span class="prix">5 €</span></li><li class="plat" data-regime="vege"><div><h4>Crêpe « Nyx » <span class="pastille-regime">🌱 Végé</span></h4><p>Chocolat noir, banane, coco</p></div><span class="prix">6 €</span></li></ul>
+        </article>
+        <article class="stand st-orange apparait">
+          <div class="stand-entete"><span class="stand-icone">🥤</span><div><h3>Le Bar à Lait</h3><p>Milkshakes, glaces & sans alcool</p></div></div>
+          <ul class="plats"><li class="plat" data-regime="vege"><div><h4>Milkshake « Lady Ronronne » <span class="pastille-regime">🌱 Végé</span></h4><p>Fraise, vanille, chantilly, paillettes de sucre</p></div><span class="prix">6 €</span></li><li class="plat" data-regime="vegan"><div><h4>Mocktail « Herbe à Chat » <span class="pastille-regime">🌿 Vegan</span></h4><p>Menthe, citron vert, gingembre, eau pétillante</p></div><span class="prix">5 €</span></li><li class="plat" data-regime="vege"><div><h4>Glace « Pleine Lune » <span class="pastille-regime">🌱 Végé</span></h4><p>2 boules au choix, cornet maison</p></div><span class="prix">4 €</span></li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="conteneur preferes">
+      <span class="surtitre apparait">Le coin des artistes</span>
+      <h2 class="titre-section apparait">Leurs plats <em>préférés</em>.</h2>
+      <div class="preferes-grille">
+        <div class="prefere apparait"><p class="qui">Lady Ronronne</p><p class="quoi">Milkshake « Lady Ronronne »</p><p class="pourquoi">« Évidemment, il porte mon nom. »</p></div>
+        <div class="prefere apparait"><p class="qui">MC Moustache</p><p class="quoi">Le Gros Matou + frites griffées</p><p class="pourquoi">« Le seul burger qui tient tout un freestyle. »</p></div>
+        <div class="prefere apparait"><p class="qui">El Griffo</p><p class="quoi">Pattes Arrabbiata</p><p class="pourquoi">« Ça pique comme un solo de guitare. »</p></div>
+        <div class="prefere apparait"><p class="qui">Nyx Panthera</p><p class="quoi">Crêpe « Nyx » à 1h du matin</p><p class="pourquoi">« Le meilleur repas, c'est celui d'après le set. »</p></div>
+      </div>
+    </section>
+
+    <section class="conteneur">
+      <div class="allergenes apparait">
+        <h2>Allergies &amp; régimes</h2>
+        <p>La liste des 14 allergènes est affichée sur chaque stand. Des plats sans gluten sont disponibles chez Pattes Fraîches et au Thon qui Ronronne. Une question&nbsp;? Demandez au stand info, à côté de la Scène Griffe.</p>
+        <a href="infos.html#sur-place" class="btn">Tous les services sur place</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="conteneur">
+      <div class="footer-grille">
+        <div>
+          <a href="index.html" class="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 4 L23 19 Q32 16 41 19 L56 4 L57 34 Q57 59 32 59 Q7 59 7 34 Z" fill="#ff3d8b"/><path d="M13 13 L20 20 L13 24Z M51 13 L44 20 L51 24Z" fill="#120a24" opacity=".35"/><ellipse cx="22.5" cy="36" rx="4.2" ry="5" fill="#120a24"/><ellipse cx="41.5" cy="36" rx="4.2" ry="5" fill="#120a24"/><circle cx="24" cy="34.5" r="1.4" fill="#fff8f0"/><circle cx="43" cy="34.5" r="1.4" fill="#fff8f0"/><path d="M29 44 h6 l-3 3.5z" fill="#e8ff3a"/><path d="M3 41 h12 M3 46 h12 M49 41 h12 M49 46 h12" stroke="#120a24" stroke-width="1.6" stroke-linecap="round"/></svg>Miouuusic<span class="tag">EJJN</span></a>
+          <p style="margin-top:1rem">Le festival qui fait ronronner les oreilles. 3 jours, 3 scènes, 4 artistes et des milliers de matous mélomanes.</p>
+          <div class="reseaux">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="TikTok">TT</a>
+            <a href="#" aria-label="YouTube">YT</a>
+            <a href="#" aria-label="Spotify">SP</a>
+          </div>
+        </div>
+        <div>
+          <h4>Le site</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="festival.html">Le festival</a></li>
+            <li><a href="artistes.html">Artistes</a></li>
+            <li><a href="programme.html">Programme</a></li>
+            <li><a href="infos.html">Infos pratiques</a></li>
+            <li><a href="restaurant.html">Restaurant</a></li>
+            <li><a href="volley.html">Tournoi de volley</a></li>
+            <li><a href="accessibilite.html">Accessibilité</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Infos</h4>
+          <ul>
+            <li>9 · 10 · 11 juillet 2027</li>
+            <li>Domaine de la Chatière</li>
+            <li><a href="infos.html#acces">Venir au festival</a></li>
+            <li><a href="infos.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>bonjour@miouuusic-ejjn.fr</li>
+            <li><a href="infos.html#billetterie">Billetterie</a></li>
+            <li>Site réalisé par l'agence EventWeb</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bas">
+        <span>© <span data-annee>2026</span> Miouuusic EJJN — Tous droits ronronnés.</span>
+        <span>Fait avec 🐾 et beaucoup de croquettes.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
