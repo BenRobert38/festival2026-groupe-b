@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibilité — Miouuusic EJJN</title>
+  <meta name="description" content="Les dispositifs d'accessibilité du festival Miouuusic EJJN : PMR, LSF, zone calme, accompagnateur gratuit.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>">
+  <link rel="stylesheet" href="commun.css">
+  <link rel="stylesheet" href="accessibilite.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="conteneur">
+      <a href="index.html" class="logo" aria-label="Miouuusic EJJN — accueil"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 4 L23 19 Q32 16 41 19 L56 4 L57 34 Q57 59 32 59 Q7 59 7 34 Z" fill="#ff3d8b"/><path d="M13 13 L20 20 L13 24Z M51 13 L44 20 L51 24Z" fill="#120a24" opacity=".35"/><ellipse cx="22.5" cy="36" rx="4.2" ry="5" fill="#120a24"/><ellipse cx="41.5" cy="36" rx="4.2" ry="5" fill="#120a24"/><circle cx="24" cy="34.5" r="1.4" fill="#fff8f0"/><circle cx="43" cy="34.5" r="1.4" fill="#fff8f0"/><path d="M29 44 h6 l-3 3.5z" fill="#e8ff3a"/><path d="M3 41 h12 M3 46 h12 M49 41 h12 M49 46 h12" stroke="#120a24" stroke-width="1.6" stroke-linecap="round"/></svg>Miouuusic<span class="tag">EJJN</span></a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-principale">
+        <a href="index.html">Accueil</a>
+        <a href="festival.html">Le festival</a>
+        <a href="artistes.html">Artistes</a>
+        <a href="programme.html">Programme</a>
+        <a href="infos.html">Infos pratiques</a>
+        <a href="infos.html#billetterie" class="btn btn-petit">Billets 🎟</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="entete-page">
+      <div class="conteneur">
+        <span class="surtitre">Un festival pour tout le monde</span>
+        <h1><span class="contour">Accessi</span>bilité</h1>
+        <p class="intro">Au Miouuusic, chaque matou doit pouvoir profiter de la musique. Voici tout ce que nous mettons en place, sur le site du festival comme sur ce site web.</p>
+      </div>
+      <svg class="patte" viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="68" rx="24" ry="20"/><ellipse cx="20" cy="42" rx="9" ry="12"/><ellipse cx="39" cy="24" rx="9" ry="12"/><ellipse cx="61" cy="24" rx="9" ry="12"/><ellipse cx="80" cy="42" rx="9" ry="12"/></svg>
+    </section>
+
+    <!-- ===== RÉGLAGES DU SITE ===== -->
+    <section class="conteneur">
+      <div class="reglages apparait" aria-labelledby="titre-reglages">
+        <div>
+          <h2 id="titre-reglages">Adaptez ce site à vos besoins</h2>
+          <p>Vos choix sont gardés en mémoire et s'appliquent sur toutes les pages.</p>
+        </div>
+        <div class="interrupteurs">
+          <button class="interrupteur" data-option="texte-grand" aria-pressed="false"><span class="piste"></span>Texte agrandi</button>
+          <button class="interrupteur" data-option="contraste" aria-pressed="false"><span class="piste"></span>Contraste renforcé</button>
+          <button class="interrupteur" data-option="sans-anim" aria-pressed="false"><span class="piste"></span>Sans animations</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DISPOSITIFS ===== -->
+    <section class="conteneur bloc">
+      <span class="surtitre apparait">Sur le festival</span>
+      <h2 class="titre-section apparait">Nos <em>dispositifs</em>.</h2>
+      <div class="dispositifs">
+        <article class="dispositif apparait">
+          <span class="d-icone" aria-hidden="true">♿</span>
+          <h3>Mobilité réduite</h3>
+          <ul>
+            <li>Parking PMR réservé devant l'entrée principale</li>
+            <li>Chemins stabilisés entre toutes les scènes</li>
+            <li>Plateformes surélevées devant les Scènes Ronron et Griffe</li>
+            <li>Toilettes adaptées dans chaque zone</li>
+            <li>Prêt de fauteuils roulants au stand accueil</li>
+          </ul>
+        </article>
+        <article class="dispositif apparait">
+          <span class="d-icone" aria-hidden="true">🦻</span>
+          <h3>Surdité &amp; malentendance</h3>
+          <ul>
+            <li>Interprétation en LSF des concerts des 4 têtes d'affiche</li>
+            <li>Gilets vibrants pour ressentir la musique (sur réservation)</li>
+            <li>Boucles magnétiques aux points d'accueil</li>
+            <li>Paroles projetées sur écran pendant le final EJJN All Stars</li>
+          </ul>
+        </article>
+        <article class="dispositif apparait">
+          <span class="d-icone" aria-hidden="true">🦯</span>
+          <h3>Cécité &amp; malvoyance</h3>
+          <ul>
+            <li>Plan du site en relief et en braille à l'accueil</li>
+            <li>Programme disponible en gros caractères et en audio</li>
+            <li>Bénévoles accompagnateurs sur demande</li>
+            <li>Chiens guides bienvenus (gamelle d'eau fournie&nbsp;!)</li>
+          </ul>
+        </article>
+        <article class="dispositif apparait">
+          <span class="d-icone" aria-hidden="true">🧠</span>
+          <h3>Handicaps invisibles</h3>
+          <ul>
+            <li>Zone calme «&nbsp;Le Coussin&nbsp;», sans musique, ouverte en continu</li>
+            <li>Casques anti-bruit prêtés gratuitement</li>
+            <li>Horaires d'affluence faible indiqués sur l'appli</li>
+            <li>Tour de cou tournesol reconnu par toute l'équipe</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== BILLETTERIE ACCESSIBLE ===== -->
+    <section class="conteneur">
+      <div class="accompagnateur apparait">
+        <div class="acc-badge">GRATUIT</div>
+        <div>
+          <h2>Place accompagnateur offerte</h2>
+          <p>Sur présentation d'une carte mobilité inclusion (CMI) ou d'un justificatif, la personne qui vous accompagne entre gratuitement, quel que soit le pass choisi.</p>
+        </div>
+        <a href="infos.html#billetterie" class="btn">Voir la billetterie</a>
+      </div>
+    </section>
+
+    <!-- ===== SITE WEB ===== -->
+    <section class="conteneur bloc site-web">
+      <div class="apparait">
+        <span class="surtitre">Ce site web</span>
+        <h2 class="titre-section">Un site pensé pour <em>tous</em>.</h2>
+        <p>Nous travaillons pour que ce site respecte les recommandations d'accessibilité&nbsp;:</p>
+      </div>
+      <ul class="engagements apparait">
+        <li>Navigation complète au clavier</li>
+        <li>Textes alternatifs sur les images</li>
+        <li>Respect du réglage «&nbsp;réduire les animations&nbsp;» de votre appareil</li>
+        <li>Structure claire avec titres hiérarchisés</li>
+        <li>Contrastes de couleurs vérifiés</li>
+        <li>Pages adaptées au mobile et au zoom</li>
+      </ul>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="conteneur">
+      <div class="referent apparait">
+        <h2>Votre référente accessibilité</h2>
+        <p>Camille répond à toutes vos questions et organise votre venue sur mesure&nbsp;: réservation d'un gilet vibrant, d'un accompagnateur, d'une place de parking…</p>
+        <p class="ref-contact"><strong>acces@miouuusic-ejjn.fr</strong> · 05 00 00 00 00 (du lundi au vendredi, 9h–18h)</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="conteneur">
+      <div class="footer-grille">
+        <div>
+          <a href="index.html" class="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 4 L23 19 Q32 16 41 19 L56 4 L57 34 Q57 59 32 59 Q7 59 7 34 Z" fill="#ff3d8b"/><path d="M13 13 L20 20 L13 24Z M51 13 L44 20 L51 24Z" fill="#120a24" opacity=".35"/><ellipse cx="22.5" cy="36" rx="4.2" ry="5" fill="#120a24"/><ellipse cx="41.5" cy="36" rx="4.2" ry="5" fill="#120a24"/><circle cx="24" cy="34.5" r="1.4" fill="#fff8f0"/><circle cx="43" cy="34.5" r="1.4" fill="#fff8f0"/><path d="M29 44 h6 l-3 3.5z" fill="#e8ff3a"/><path d="M3 41 h12 M3 46 h12 M49 41 h12 M49 46 h12" stroke="#120a24" stroke-width="1.6" stroke-linecap="round"/></svg>Miouuusic<span class="tag">EJJN</span></a>
+          <p style="margin-top:1rem">Le festival qui fait ronronner les oreilles. 3 jours, 3 scènes, 4 artistes et des milliers de matous mélomanes.</p>
+          <div class="reseaux">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="TikTok">TT</a>
+            <a href="#" aria-label="YouTube">YT</a>
+            <a href="#" aria-label="Spotify">SP</a>
+          </div>
+        </div>
+        <div>
+          <h4>Le site</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="festival.html">Le festival</a></li>
+            <li><a href="artistes.html">Artistes</a></li>
+            <li><a href="programme.html">Programme</a></li>
+            <li><a href="infos.html">Infos pratiques</a></li>
+            <li><a href="restaurant.html">Restaurant</a></li>
+            <li><a href="volley.html">Tournoi de volley</a></li>
+            <li><a href="accessibilite.html">Accessibilité</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Infos</h4>
+          <ul>
+            <li>9 · 10 · 11 juillet 2027</li>
+            <li>Domaine de la Chatière</li>
+            <li><a href="infos.html#acces">Venir au festival</a></li>
+            <li><a href="infos.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>bonjour@miouuusic-ejjn.fr</li>
+            <li><a href="infos.html#billetterie">Billetterie</a></li>
+            <li>Site réalisé par l'agence EventWeb</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bas">
+        <span>© <span data-annee>2026</span> Miouuusic EJJN — Tous droits ronronnés.</span>
+        <span>Fait avec 🐾 et beaucoup de croquettes.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
