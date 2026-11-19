@@ -80,3 +80,53 @@ filtres.forEach((f) => {
 
 /* --- Année dans le pied de page --- */
 document.querySelectorAll('[data-annee]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+
+/* --- Filtre végé / vegan (page restaurant) --- */
+const filtresRegime = document.querySelectorAll('.filtre-regime');
+filtresRegime.forEach((f) => {
+  f.addEventListener('click', () => {
+    filtresRegime.forEach((x) => x.classList.remove('actif'));
+    f.classList.add('actif');
+    const choix = f.dataset.regime;
+    document.querySelectorAll('.plat').forEach((plat) => {
+      const r = plat.dataset.regime;
+      // « végé » inclut aussi les plats vegan
+      const ok = choix === 'tout' || r === choix || (choix === 'vege' && r === 'vegan');
+      plat.classList.toggle('estompe', !ok);
+    });
+  });
+});
+
+/* --- Formulaire d'inscription (page volley) --- */
+const formVolley = document.getElementById('form-volley');
+if (formVolley) {
+  formVolley.addEventListener('submit', (e) => {
+    e.preventDefault(); // pas de serveur : on affiche juste une confirmation
+    const equipe = formVolley.equipe.value.trim();
+    formVolley.querySelector('.message-form').textContent =
+      `✅ Bravo ! L'équipe « ${equipe} » est pré-inscrite. Un e-mail de confirmation va suivre.`;
+    formVolley.reset();
+  });
+}
+
+/* --- Réglages d'accessibilité (mémorisés sur toutes les pages) --- */
+const OPTIONS_ACCES = ['texte-grand', 'contraste', 'sans-anim'];
+const lireOption = (o) => { try { return localStorage.getItem('acces-' + o) === '1'; } catch (e) { return false; } };
+const ecrireOption = (o, v) => { try { localStorage.setItem('acces-' + o, v ? '1' : '0'); } catch (e) {} };
+
+OPTIONS_ACCES.forEach((o) => document.documentElement.classList.toggle(o, lireOption(o)));
+
+document.querySelectorAll('.interrupteur').forEach((bouton) => {
+  const o = bouton.dataset.option;
+  bouton.setAttribute('aria-pressed', String(lireOption(o)));
+  bouton.addEventListener('click', () => {
+    const actif = bouton.getAttribute('aria-pressed') !== 'true';
+    bouton.setAttribute('aria-pressed', String(actif));
+    document.documentElement.classList.toggle(o, actif);
+    ecrireOption(o, actif);
+  });
+});
+
+/* --- Année dans le pied de page --- */
+document.querySelectorAll('[data-annee]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+
