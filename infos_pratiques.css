@@ -1,0 +1,141 @@
+/* =========================================================
+   MIOUUUSIC EJJN — Page « Infos pratiques »
+   ========================================================= */
+
+.entete-page { background: radial-gradient(ellipse at 85% 30%, rgba(155,107,255,.25), transparent 55%); }
+
+.sommaire { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 2rem; }
+.sommaire a {
+  padding: .6rem 1.1rem; border-radius: 999px;
+  background: var(--nuit-2); border: 1px solid var(--nuit-3);
+  font-weight: 500; font-size: .9rem;
+  transition: background .2s, transform .2s;
+}
+.sommaire a:hover { background: var(--rose); color: var(--nuit); transform: translateY(-3px); }
+
+.bloc { padding: 4rem 0; scroll-margin-top: 80px; }
+.billetterie { scroll-margin-top: 80px; }
+
+/* ---------- Horaires ---------- */
+.horaires { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.horaire {
+  padding: 1.8rem; border-radius: var(--rayon);
+  background: var(--nuit-2); border: 2px solid var(--nuit-3);
+  transition: border-color .3s, transform .3s;
+}
+.horaire:hover { border-color: var(--jaune); transform: rotate(-1.5deg); }
+.jour-court { display: block; font-family: var(--font-titre); font-weight: 900; font-size: 2rem; color: var(--jaune); margin-bottom: .6rem; }
+.horaire p { color: var(--gris); }
+.horaire strong { color: var(--blanc); font-family: var(--font-mono); }
+
+/* ---------- Accès ---------- */
+.acces { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3.5rem; align-items: start; }
+.adresse { font-family: var(--font-mono); color: var(--rose); margin-bottom: 1.8rem; }
+.transports li { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px dashed rgba(255,255,255,.12); }
+.transports li > span {
+  flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px;
+  display: grid; place-items: center; font-size: 1.4rem;
+  background: var(--nuit-2);
+}
+.transports strong { font-family: var(--font-titre); font-size: .95rem; }
+.transports p { color: var(--gris); font-size: .93rem; }
+
+.carte { position: sticky; top: 100px; }
+.carte svg { width: 100%; border-radius: var(--rayon); box-shadow: 0 30px 60px rgba(0,0,0,.4); }
+.carte figcaption { font-family: var(--font-mono); font-size: .78rem; color: var(--gris); text-align: center; margin-top: .8rem; }
+
+/* ---------- Billetterie ---------- */
+.billetterie {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, transparent, var(--nuit-2) 15%, var(--nuit-2) 85%, transparent);
+}
+.tarifs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: center; margin-top: 1.5rem; }
+.tarif {
+  padding: 2.2rem 2rem; border-radius: 28px;
+  background: var(--nuit); border: 2px solid var(--nuit-3);
+  display: flex; flex-direction: column; gap: .4rem;
+  position: relative;
+  transition: transform .3s, border-color .3s;
+}
+.tarif:hover { transform: translateY(-8px); border-color: var(--cyan); }
+.tarif-nom { font-family: var(--font-titre); font-weight: 700; font-size: 1.1rem; }
+.tarif-prix { font-family: var(--font-titre); font-weight: 900; font-size: 4rem; line-height: 1; color: var(--cyan); }
+.tarif-prix span { font-size: 1.6rem; vertical-align: top; margin-left: .2rem; }
+.tarif-desc { font-family: var(--font-mono); font-size: .8rem; color: var(--gris); text-transform: uppercase; margin-bottom: 1rem; }
+.tarif ul { margin-bottom: 1.8rem; flex: 1; }
+.tarif li { padding: .45rem 0 .45rem 1.6rem; position: relative; font-size: .95rem; }
+.tarif li::before { content: '🐾'; position: absolute; left: 0; font-size: .8rem; top: .55rem; }
+.tarif .btn { justify-content: center; }
+
+.populaire {
+  background: var(--rose); color: var(--nuit); border-color: var(--rose);
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 10px 10px 0 var(--jaune);
+}
+.populaire:hover { transform: scale(1.07) rotate(0deg); border-color: var(--rose); }
+.populaire .tarif-prix { color: var(--nuit); }
+.populaire .tarif-desc { color: var(--nuit); opacity: .7; }
+.populaire .btn { background: var(--nuit); color: var(--blanc); border-color: var(--nuit); }
+.badge {
+  position: absolute; top: -16px; right: 20px;
+  background: var(--jaune); color: var(--nuit);
+  font-family: var(--font-titre); font-weight: 800; font-size: .72rem;
+  padding: .45rem .9rem; border-radius: 999px; border: 2px solid var(--nuit);
+  transform: rotate(4deg);
+}
+.tarifs-note { margin-top: 2.5rem; text-align: center; color: var(--gris); font-size: .9rem; }
+
+/* ---------- Services ---------- */
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.service {
+  padding: 1.8rem; border-radius: var(--rayon);
+  border: 2px solid var(--nuit-3);
+  transition: background .3s, transform .3s;
+}
+.service:hover { background: var(--nuit-2); transform: translateY(-6px); }
+.service span { font-size: 2rem; }
+.service h3 { font-family: var(--font-titre); font-size: 1.05rem; margin: .7rem 0 .4rem; }
+.service p { color: var(--gris); font-size: .93rem; }
+
+/* ---------- FAQ ---------- */
+.faq { display: grid; gap: .8rem; max-width: 860px; }
+.faq details {
+  border-radius: 18px; background: var(--nuit-2); border: 1px solid var(--nuit-3);
+  transition: border-color .2s;
+}
+.faq details[open] { border-color: var(--rose); }
+.faq summary {
+  cursor: pointer; list-style: none;
+  padding: 1.2rem 1.5rem; padding-right: 3.5rem; position: relative;
+  font-family: var(--font-titre); font-weight: 600; font-size: 1rem;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: '+'; position: absolute; right: 1.4rem; top: 50%; translate: 0 -50%;
+  width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--rose); color: var(--nuit); font-size: 1.3rem; font-weight: 900;
+  transition: transform .3s;
+}
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { padding: 0 1.5rem 1.4rem; color: var(--gris); }
+
+/* ---------- Contact ---------- */
+.contact {
+  text-align: center; padding: 3.5rem 2rem; border-radius: 32px;
+  background: var(--jaune); color: var(--nuit);
+}
+.contact h2 { font-family: var(--font-titre); font-weight: 900; font-size: clamp(1.8rem, 4vw, 2.8rem); }
+.contact p { margin: .8rem 0 1.8rem; font-weight: 500; }
+.contact .btn { background: var(--nuit); color: var(--blanc); border-color: var(--nuit); box-shadow: 4px 4px 0 var(--rose); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 950px) {
+  .acces { grid-template-columns: 1fr; }
+  .carte { position: static; max-width: 460px; }
+  .tarifs { grid-template-columns: 1fr; max-width: 440px; margin-inline: auto; gap: 2rem; }
+  .populaire { transform: none; }
+  .services { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .horaires, .services { grid-template-columns: 1fr; }
+}
